@@ -14,6 +14,7 @@
 		7EA756A72775FC11004780AB /* Media_MinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA756A62775FC11004780AB /* Media_MinhaTests.swift */; };
 		7EA756B12775FC11004780AB /* Media_MinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA756B02775FC11004780AB /* Media_MinhaUITests.swift */; };
 		7EA756B32775FC11004780AB /* Media_MinhaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA756B22775FC11004780AB /* Media_MinhaUITestsLaunchTests.swift */; };
+		7EA756C327760676004780AB /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA756C227760676004780AB /* UserNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		7EA756AC2775FC11004780AB /* Media MinhaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Media MinhaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA756B02775FC11004780AB /* Media_MinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_MinhaUITests.swift; sourceTree = "<group>"; };
 		7EA756B22775FC11004780AB /* Media_MinhaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_MinhaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7EA756C227760676004780AB /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +97,8 @@
 		7EA7568E2775FC06004780AB /* Media Minha */ = {
 			isa = PBXGroup;
 			children = (
-				7EA7568F2775FC06004780AB /* AppDelegate.swift */,
-				7EA756912775FC06004780AB /* SceneDelegate.swift */,
-				7EA756982775FC10004780AB /* Assets.xcassets */,
-				7EA7569A2775FC10004780AB /* LaunchScreen.storyboard */,
+				7EA756C0277603B9004780AB /* Views */,
+				7EA756BF2776039D004780AB /* Support */,
 				7EA7569D2775FC10004780AB /* Info.plist */,
 			);
 			path = "Media Minha";
@@ -119,6 +119,33 @@
 				7EA756B22775FC11004780AB /* Media_MinhaUITestsLaunchTests.swift */,
 			);
 			path = "Media MinhaUITests";
+			sourceTree = "<group>";
+		};
+		7EA756BF2776039D004780AB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7EA7568F2775FC06004780AB /* AppDelegate.swift */,
+				7EA756912775FC06004780AB /* SceneDelegate.swift */,
+				7EA756982775FC10004780AB /* Assets.xcassets */,
+				7EA7569A2775FC10004780AB /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		7EA756C0277603B9004780AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EA756C127760642004780AB /* Username */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7EA756C127760642004780AB /* Username */ = {
+			isa = PBXGroup;
+			children = (
+				7EA756C227760676004780AB /* UserNameViewController.swift */,
+			);
+			path = Username;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA756902775FC06004780AB /* AppDelegate.swift in Sources */,
+				7EA756C327760676004780AB /* UserNameViewController.swift in Sources */,
 				7EA756922775FC06004780AB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
