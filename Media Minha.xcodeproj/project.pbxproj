@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E4532C127761E23004F0D63 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4532C027761E23004F0D63 /* UserNameView.swift */; };
+		7E97A23B2778CFE80085370B /* CalculateGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97A23A2778CFE80085370B /* CalculateGradeViewController.swift */; };
+		7E97A23D2778D0D30085370B /* CalculteGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97A23C2778D0D30085370B /* CalculteGradeView.swift */; };
+		7E97A2402778D24F0085370B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97A23F2778D24F0085370B /* CustomTextField.swift */; };
+		7E97A2422778DDB50085370B /* CalculateGradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97A2412778DDB50085370B /* CalculateGradeViewModel.swift */; };
 		7EA756902775FC06004780AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7568F2775FC06004780AB /* AppDelegate.swift */; };
 		7EA756922775FC06004780AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA756912775FC06004780AB /* SceneDelegate.swift */; };
 		7EA756992775FC10004780AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EA756982775FC10004780AB /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E4532C027761E23004F0D63 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
+		7E97A23A2778CFE80085370B /* CalculateGradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateGradeViewController.swift; sourceTree = "<group>"; };
+		7E97A23C2778D0D30085370B /* CalculteGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculteGradeView.swift; sourceTree = "<group>"; };
+		7E97A23F2778D24F0085370B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		7E97A2412778DDB50085370B /* CalculateGradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateGradeViewModel.swift; sourceTree = "<group>"; };
 		7EA7568C2775FC06004780AB /* Media Minha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Media Minha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA7568F2775FC06004780AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EA756912775FC06004780AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E97A2392778CF800085370B /* CalculateGrade */ = {
+			isa = PBXGroup;
+			children = (
+				7E97A23A2778CFE80085370B /* CalculateGradeViewController.swift */,
+				7E97A23C2778D0D30085370B /* CalculteGradeView.swift */,
+				7E97A2412778DDB50085370B /* CalculateGradeViewModel.swift */,
+			);
+			path = CalculateGrade;
+			sourceTree = "<group>";
+		};
+		7E97A23E2778D2280085370B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7E97A23F2778D24F0085370B /* CustomTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		7EA756832775FC06004780AB = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				7EA756C0277603B9004780AB /* Views */,
+				7E97A23E2778D2280085370B /* CustomViews */,
 				7EA756BF2776039D004780AB /* Support */,
 				7EA7569D2775FC10004780AB /* Info.plist */,
 			);
@@ -136,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				7EA756C127760642004780AB /* Username */,
+				7E97A2392778CF800085370B /* CalculateGrade */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				7EA756C227760676004780AB /* UserNameViewController.swift */,
+				7E4532C027761E23004F0D63 /* UserNameView.swift */,
 			);
 			path = Username;
 			sourceTree = "<group>";
@@ -278,7 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E97A2402778D24F0085370B /* CustomTextField.swift in Sources */,
+				7E97A23B2778CFE80085370B /* CalculateGradeViewController.swift in Sources */,
+				7E4532C127761E23004F0D63 /* UserNameView.swift in Sources */,
 				7EA756902775FC06004780AB /* AppDelegate.swift in Sources */,
+				7E97A23D2778D0D30085370B /* CalculteGradeView.swift in Sources */,
+				7E97A2422778DDB50085370B /* CalculateGradeViewModel.swift in Sources */,
 				7EA756C327760676004780AB /* UserNameViewController.swift in Sources */,
 				7EA756922775FC06004780AB /* SceneDelegate.swift in Sources */,
 			);

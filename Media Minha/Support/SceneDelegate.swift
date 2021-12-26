@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - functions
     private func setupUserNameViewController() -> UINavigationController {
         let username = UserNameViewController()
-        username.title = "Seu nome"
+        username.title = "Bem-Vindo"
         
         return UINavigationController(rootViewController: username)
     }
