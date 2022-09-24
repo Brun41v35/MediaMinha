@@ -7,12 +7,26 @@
 
 import UIKit
 
-class UserNameViewController: UIViewController {
+final class UserNameViewController: UIViewController {
     
     // MARK: - Variables
-    private let userNameView = UserNameView()
+    
+    private let userNameView: UserNameView
+    
+    // MARK: - init
+    
+    init(userNameView: UserNameView) {
+        self.userNameView = userNameView
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - LifeCycle
+    
     override func loadView() {
         view = userNameView
     }
@@ -23,13 +37,15 @@ class UserNameViewController: UIViewController {
     }
     
     // MARK: - Private functions
+    
     private func callActionSaveName() {
-        let calculateGradeViewController = CalculateGradeViewController()
+        let calculateGradeViewController = CalculateGradeViewController(calculteGradeView: <#T##CalculteGradeView#>, viewModel: <#T##CalculateGradeViewModel#>)
         navigationController?.pushViewController(calculateGradeViewController, animated: true)
     }
 }
 
 // MARK: - Extension
+
 extension UserNameViewController: UserNameViewDelegate {
     func didTapSaveName() {
         callActionSaveName()

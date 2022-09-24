@@ -84,6 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E5D71E928DEB9DF00544944 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		7E97A2392778CF800085370B /* CalculateGrade */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +134,7 @@
 			children = (
 				7EA756C0277603B9004780AB /* Views */,
 				7E97A23E2778D2280085370B /* CustomViews */,
+				7E5D71E928DEB9DF00544944 /* Coordinator */,
 				7EA756BF2776039D004780AB /* Support */,
 				7EA7569D2775FC10004780AB /* Info.plist */,
 			);

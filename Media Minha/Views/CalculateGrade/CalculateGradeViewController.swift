@@ -7,11 +7,26 @@
 
 import UIKit
 
-class CalculateGradeViewController: UIViewController {
+final class CalculateGradeViewController: UIViewController {
     
     // MARK: - Variables
-    private let calculteGradeView = CalculteGradeView()
-    private let viewModel = CalculateGradeViewModel()
+    
+    private let calculteGradeView: CalculteGradeView
+    private let viewModel: CalculateGradeViewModelProtocol
+    
+    // MARK: - init
+    
+    init(calculteGradeView: CalculteGradeView,
+         viewModel: CalculateGradeViewModel) {
+        self.calculteGradeView = calculteGradeView
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - LifeCycle
     override func loadView() {

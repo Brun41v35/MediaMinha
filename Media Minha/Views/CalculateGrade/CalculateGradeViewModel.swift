@@ -7,9 +7,26 @@
 
 import Foundation
 
-public class CalculateGradeViewModel {
+protocol CalculateGradeViewModelProtocol {
+    func calculateGrade(firstGrade: String, secondGrade: String)
+}
+
+final class CalculateGradeViewModel {
     
-    // MARK: - Public Functions
+    // MARK: - Private Functions
+    
+    private func validatingResult(result: Double) {
+        if result > 6.0 {
+            print("Aprovado")
+        } else {
+            print("reprovado")
+        }
+    }
+}
+
+// MARK: - Extension
+
+extension CalculateGradeViewModel: CalculateGradeViewModelProtocol {
     func calculateGrade(firstGrade: String, secondGrade: String) {
         var result: Double = 0
         let firstValueConverted = Double(firstGrade) ?? 0
@@ -17,14 +34,5 @@ public class CalculateGradeViewModel {
         
         result = (firstValueConverted * 0.4) + (secondValueConverted * 0.6)
         validatingResult(result: result)
-    }
-    
-    // MARK: - Private Functions
-    private func validatingResult(result: Double) {
-        if result > 6.0 {
-            print("Aprovado")
-        } else {
-            print("reprovado")
-        }
     }
 }
