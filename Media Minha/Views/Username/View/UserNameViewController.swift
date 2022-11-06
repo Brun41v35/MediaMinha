@@ -9,14 +9,14 @@ import UIKit
 
 final class UserNameViewController: UIViewController {
     
-    // MARK: - Variables
+    // MARK: - Private Prperties
     
-    private let userNameView: UserNameView
+    private let calculateGradeFactory: CalculateGradeFactoryProtocol
     
     // MARK: - init
     
-    init(userNameView: UserNameView) {
-        self.userNameView = userNameView
+    init(calculateGradeFactory: CalculateGradeFactoryProtocol) {
+        self.calculateGradeFactory = calculateGradeFactory
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,18 +28,27 @@ final class UserNameViewController: UIViewController {
     // MARK: - LifeCycle
     
     override func loadView() {
-        view = userNameView
+        view = UserNameView(delegate: self)
     }
     
     override func viewDidLoad() {
-        userNameView.setDelegate(delegate: self)
+        setup()
+    }
+    
+    // MARK: - Setup
+    
+    func setup() {
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    // MARK: - Private functions
+    // MARK: - Public Methods
     
-    private func callActionSaveName() {
-        let calculateGradeViewController = CalculateGradeViewController(calculteGradeView: <#T##CalculteGradeView#>, viewModel: <#T##CalculateGradeViewModel#>)
+    func callCalculateGradeScreen() {
+        let calculateGradeViewController = calculateGradeFactory.make()
         navigationController?.pushViewController(calculateGradeViewController, animated: true)
     }
 }
@@ -48,6 +57,6 @@ final class UserNameViewController: UIViewController {
 
 extension UserNameViewController: UserNameViewDelegate {
     func didTapSaveName() {
-        callActionSaveName()
+        callCalculateGradeScreen()
     }
 }

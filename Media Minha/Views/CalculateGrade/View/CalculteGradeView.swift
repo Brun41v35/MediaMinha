@@ -11,7 +11,7 @@ protocol CalculteGradeViewDelegate: AnyObject {
     func didTapCalculate()
 }
 
-public class CalculteGradeView: UIView {
+final class CalculteGradeView: UIView {
     
     // MARK: - Variables
     lazy var firstGradeTextField = CustomTextField(placeholder: "N1")

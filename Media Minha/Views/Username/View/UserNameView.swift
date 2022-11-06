@@ -14,27 +14,33 @@ protocol UserNameViewDelegate: AnyObject {
 public class UserNameView: UIView {
     
     // MARK: - Variables
+    
     lazy var usernameTextField = makeTextField()
     lazy var informationLabel = makeLabel()
     lazy var saveNameButton = makeButton()
-    var delegate: UserNameViewDelegate?
+    private unowned let delegate: UserNameViewDelegate
     
     // MARK: - Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    init(delegate: UserNameViewDelegate) {
+        self.delegate = delegate
+        super.init(frame: .zero)
         setup()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - TouchesBegan
+    
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         endEditing(true)
     }
     
     // MARK: - Setup
+    
     private func setup() {
         setupSubViews()
         configureLabel()
@@ -53,27 +59,23 @@ public class UserNameView: UIView {
         addSubview(saveNameButton)
     }
     
-    // MARK: - Public Functions
-    func setDelegate(delegate: UserNameViewDelegate) {
-        self.delegate = delegate
-    }
-    
     // MARK: - Private Functions
+    
     private func makeTextField() -> UITextField {
         let textField = UITextField()
-        textField.layer.cornerRadius          = 10
-        textField.layer.borderWidth           = 2
-        textField.layer.borderColor           = UIColor.systemGray4.cgColor
-        textField.textColor                   = .label
-        textField.tintColor                   = .label
-        textField.textAlignment               = .center
-        textField.font                        = UIFont.preferredFont(forTextStyle: .title2)
-        textField.adjustsFontSizeToFitWidth   = true
-        textField.minimumFontSize             = 12
-        textField.backgroundColor             = .tertiarySystemGroupedBackground
-        textField.autocorrectionType          = .no
-        textField.returnKeyType               = .go
-        textField.placeholder                 = "Nome"
+        textField.layer.cornerRadius = 10
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor.systemGray4.cgColor
+        textField.textColor = .label
+        textField.tintColor = .label
+        textField.textAlignment = .center
+        textField.font = UIFont.preferredFont(forTextStyle: .title2)
+        textField.adjustsFontSizeToFitWidth = true
+        textField.minimumFontSize = 12
+        textField.backgroundColor = .tertiarySystemGroupedBackground
+        textField.autocorrectionType = .no
+        textField.returnKeyType = .go
+        textField.placeholder = "Nome"
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         return textField
@@ -108,10 +110,11 @@ public class UserNameView: UIView {
     
     @objc
     private func saveNameAction() {
-        delegate?.didTapSaveName()
+        delegate.didTapSaveName()
     }
     
     // MARK: - Constraints
+    
     private func configureTextField() {
         NSLayoutConstraint.activate([
             usernameTextField.centerYAnchor.constraint(equalTo: centerYAnchor),

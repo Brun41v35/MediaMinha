@@ -17,7 +17,7 @@ final class CalculateGradeViewController: UIViewController {
     // MARK: - init
     
     init(calculteGradeView: CalculteGradeView,
-         viewModel: CalculateGradeViewModel) {
+         viewModel: CalculateGradeViewModelProtocol) {
         self.calculteGradeView = calculteGradeView
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -29,6 +29,7 @@ final class CalculateGradeViewController: UIViewController {
     }
     
     // MARK: - LifeCycle
+    
     override func loadView() {
         view = calculteGradeView
     }
@@ -39,6 +40,7 @@ final class CalculateGradeViewController: UIViewController {
     }
     
     // MARK: - Setup
+    
     private func setup() {
         navigationItem.hidesBackButton = true
         calculteGradeView.setDelegate(delegate: self)
@@ -46,6 +48,7 @@ final class CalculateGradeViewController: UIViewController {
 }
 
 // MARK: - Extension
+
 extension CalculateGradeViewController: CalculteGradeViewDelegate {
     func didTapCalculate() {
         guard let firstGrade = calculteGradeView.firstGradeTextField.text else { return }

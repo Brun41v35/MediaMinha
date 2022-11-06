@@ -10,18 +10,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Variables
+    
     var window: UIWindow?
     
     // MARK: - functions
+    
     private func setupUserNameViewController() -> UINavigationController {
-        let userNameView = UserNameView()
-        let username = UserNameViewController(userNameView: userNameView)
-        username.title = "Bem-Vindo"
+        let factory = CalculateGradeFactory()
+        let userName = UserNameViewController(calculateGradeFactory: factory)
+        userName.title = "Bem-Vindo"
         
-        return UINavigationController(rootViewController: username)
+        return UINavigationController(rootViewController: userName)
     }
     
     // MARK: - Life Cycle Scene
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
