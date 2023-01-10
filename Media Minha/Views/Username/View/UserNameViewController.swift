@@ -9,13 +9,16 @@ import UIKit
 
 final class UserNameViewController: UIViewController {
     
-    // MARK: - Private Prperties
+    // MARK: - Private Properties
     
+    private let userNameView: UserNameView
     private let calculateGradeFactory: CalculateGradeFactoryProtocol
     
     // MARK: - init
     
-    init(calculateGradeFactory: CalculateGradeFactoryProtocol) {
+    init(userNameView: UserNameView,
+         calculateGradeFactory: CalculateGradeFactoryProtocol) {
+        self.userNameView = userNameView
         self.calculateGradeFactory = calculateGradeFactory
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,7 +31,7 @@ final class UserNameViewController: UIViewController {
     // MARK: - LifeCycle
     
     override func loadView() {
-        view = UserNameView(delegate: self)
+        view = userNameView
     }
     
     override func viewDidLoad() {
@@ -38,6 +41,7 @@ final class UserNameViewController: UIViewController {
     // MARK: - Setup
     
     func setup() {
+        userNameView.delegate = self
         setupNavigationBar()
     }
     
@@ -47,7 +51,13 @@ final class UserNameViewController: UIViewController {
     
     // MARK: - Public Methods
     
-    func callCalculateGradeScreen() {
+    func validateNameTextField() {
+        
+    }
+    
+    // MARK: - Private Methods
+
+    private func callCalculateGradeScreen() {
         let calculateGradeViewController = calculateGradeFactory.make()
         navigationController?.pushViewController(calculateGradeViewController, animated: true)
     }

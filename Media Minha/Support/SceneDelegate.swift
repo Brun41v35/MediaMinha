@@ -17,10 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func setupUserNameViewController() -> UINavigationController {
         let factory = CalculateGradeFactory()
-        let userName = UserNameViewController(calculateGradeFactory: factory)
-        userName.title = "Bem-Vindo"
+        let userNameView = UserNameView()
+        let userNameViewController = UserNameViewController(userNameView: userNameView,
+                                                            calculateGradeFactory: factory)
+        userNameViewController.title = "Bem-Vindo"
         
-        return UINavigationController(rootViewController: userName)
+        return UINavigationController(rootViewController: userNameViewController)
     }
     
     // MARK: - Life Cycle Scene

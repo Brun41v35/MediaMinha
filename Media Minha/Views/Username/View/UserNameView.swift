@@ -18,12 +18,11 @@ public class UserNameView: UIView {
     lazy var usernameTextField = makeTextField()
     lazy var informationLabel = makeLabel()
     lazy var saveNameButton = makeButton()
-    private unowned let delegate: UserNameViewDelegate
+    weak var delegate: UserNameViewDelegate?
     
     // MARK: - Init
     
-    init(delegate: UserNameViewDelegate) {
-        self.delegate = delegate
+    init() {
         super.init(frame: .zero)
         setup()
     }
@@ -110,7 +109,7 @@ public class UserNameView: UIView {
     
     @objc
     private func saveNameAction() {
-        delegate.didTapSaveName()
+        delegate?.didTapSaveName()
     }
     
     // MARK: - Constraints
